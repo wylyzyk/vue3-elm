@@ -1,51 +1,51 @@
 import { createRouter, createWebHistory } from "vue-router";
 import App from "../App";
 
-const home = () => import("../page/home/home.vue");
-const city = () => import("../page/city/city.vue");
-const msite = () => import("../page/msite/msite.vue");
-const search = () => import("../page/search/search.vue");
-const shop = () => import("../page/shop/shop.vue");
-const login = () => import("../page/login/login.vue");
-const profile = () => import("../page/profile/profile.vue");
-const forget = () => import("../page/forget/forget.vue");
-const order = () => import("../page/order/order.vue");
-const orderDetail = () => import("../page/order/children/orderDetail.vue");
-const vipcard = () => import("../page/vipcard/vipcard.vue");
-const invoiceRecord = () => import("../page/vipcard/children/invoiceRecord.vue");
-const useCart = () => import("../page/vipcard/children/useCart.vue");
-const vipDescription = () => import("../page/vipcard/children/vipDescription.vue");
-const food = () => import("../page/food/food.vue");
-const confirmOrder = () => import("../page/confirmOrder/confirmOrder.vue");
-const remark = () => import("../page/confirmOrder/children/remark");
-const payment = () => import("../page/confirmOrder/children/payment");
-const userValidation = () => import("../page/confirmOrder/children/userValidation");
-const invoice = () => import("../page/confirmOrder/children/invoice");
-const chooseAddress = () => import("../page/confirmOrder/children/chooseAddress");
-const addAddress = () => import("../page/confirmOrder/children/children/addAddress");
-const searchAddress = () => import("../page/confirmOrder/children/children/children/searchAddress");
-const foodDetail = () => import("../page/shop/children/foodDetail");
-const shopDetail = () => import("../page/shop/children/shopDetail");
-const shopSafe = () => import("../page/shop/children/children/shopSafe");
-const info = () => import("../page/profile/children/info");
-const setusername = () => import("../page/profile/children/children/setusername");
-const address = () => import("../page/profile/children/children/address");
-const add = () => import("../page/profile/children/children/children/add");
-const addDetail = () => import("../page/profile/children/children/children/children/addDetail");
-const balance = () => import("../page/balance/balance");
-const balanceDetail = () => import("../page/balance/children/detail");
-const benefit = () => import("../page/benefit/benefit");
-const coupon = () => import("../page/benefit/children/coupon");
-const hbDescription = () => import("../page/benefit/children/hbDescription");
-const hbHistory = () => import("../page/benefit/children/hbHistory");
-const exchange = () => import("../page/benefit/children/exchange");
-const commend = () => import("../page/benefit/children/commend");
-const points = () => import("../page/points/points");
-const pointsDetail = () => import("../page/points/children/detail");
-const service = () => import("../page/service/service");
-const questionDetail = () => import("../page/service/children/questionDetail");
-const find = () => import("../page/find/find");
-const download = () => import("../page/download/download");
+import home from "../page/home/home.vue";
+import city from "../page/city/city.vue";
+import msite from "../page/msite/msite.vue";
+import search from "../page/search/search.vue";
+import shop from "../page/shop/shop.vue";
+import login from "../page/login/login.vue";
+import profile from "../page/profile/profile.vue";
+import forget from "../page/forget/forget.vue";
+import order from "../page/order/order.vue"
+import orderDetail from "../page/order/children/orderDetail.vue"
+import vipcard from "../page/vipcard/vipcard.vue"
+import invoiceRecord from "../page/vipcard/children/invoiceRecord.vue"
+import useCart from "../page/vipcard/children/useCart.vue"
+import vipDescription from "../page/vipcard/children/vipDescription.vue";
+import food from "../page/food/food.vue";
+import confirmOrder from "../page/confirmOrder/confirmOrder.vue";
+import remark from "../page/confirmOrder/children/remark.vue";
+import payment from "../page/confirmOrder/children/payment.vue";
+import userValidation from "../page/confirmOrder/children/userValidation.vue";
+import invoice from "../page/confirmOrder/children/invoice.vue";
+import chooseAddress from "../page/confirmOrder/children/chooseAddress.vue";
+import addAddress from "../page/confirmOrder/children/children/addAddress.vue";
+import searchAddress from "../page/confirmOrder/children/children/children/searchAddress.vue";
+import foodDetail from "../page/shop/children/foodDetail.vue";
+import shopDetail from "../page/shop/children/shopDetail.vue";
+import shopSafe from "../page/shop/children/children/shopSafe.vue";
+import info from "../page/profile/children/info.vue";
+import setusername from "../page/profile/children/children/setusername.vue";
+import address from "../page/profile/children/children/address.vue";
+import add from "../page/profile/children/children/children/add.vue";
+import addDetail from "../page/profile/children/children/children/children/addDetail.vue";
+import balance from "../page/balance/balance.vue";
+import balanceDetail from "../page/balance/children/detail"
+import benefit from "../page/benefit/benefit.vue";
+import coupon from "../page/benefit/children/coupon.vue";
+import hbDescription from "../page/benefit/children/hbDescription.vue";
+import hbHistory from "../page/benefit/children/hbHistory.vue";
+import exchange from "../page/benefit/children/exchange.vue";
+import commend from "../page/benefit/children/commend.vue";
+import points from "../page/points/points.vue";
+import pointsDetail from '../page/points/children/detail.vue'
+import service from "../page/service/service.vue";
+import questionDetail from "../page/service/children/questionDetail.vue";
+import find from "../page/find/find.vue";
+import download from "../page/download/download.vue";
 
 /**
  * @type {import(vue-router).RouteConfig[]}
@@ -288,15 +288,14 @@ const routes = [
 const router = createRouter({
   routes,
   history: createWebHistory(),
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;
-    } else {
-      if (from.meta.keepAlive) {
-        from.meta.savedPosition = document.body.scrollTop;
-      }
-      return { x: 0, y: to.meta.savedPosition || 0 };
     }
+    if (from.meta.keepAlive) {
+      from.meta.savedPosition = document.body.scrollTop;
+    }
+    return { left: 0, top: to.meta.savedPosition || 0 }
   }
 });
 

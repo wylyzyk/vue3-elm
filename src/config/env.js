@@ -20,8 +20,13 @@ if (process.env.NODE_ENV == 'development') {
     imgBaseUrl = '//elm.cangdu.org/img/';
 }
 
+const localapi = ''
+const proapi = ''
+
 export {
 	baseUrl,
 	routerMode,
 	imgBaseUrl,
+  localapi,
+  proapi
 }
